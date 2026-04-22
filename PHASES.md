@@ -77,31 +77,31 @@
 ## Phase 4. Excel 업로드 기능 (`/upload`)
 
 ### 4-1. 업로드 UI
-- [ ] `app/(dashboard)/upload/page.tsx` — 업로드 이력 조회 (Server Component)
-- [ ] `components/upload/UploadForm.tsx` — Drag & Drop UI (Client Component)
-- [ ] 파일 형식 검증 (`.xlsx`만 허용), 50MB 크기 제한
-- [ ] 파일 선택 후 미리보기 (시트 감지 여부 + 첫 5행 테이블)
+- [x] `app/(dashboard)/upload/page.tsx` — 업로드 이력 조회 (Server Component)
+- [x] `components/upload/UploadForm.tsx` — Drag & Drop UI (Client Component)
+- [x] 파일 형식 검증 (`.xlsx`만 허용), 50MB 크기 제한
+- [x] 파일 선택 후 미리보기 (시트 감지 여부 + 첫 5행 테이블)
 
 ### 4-2. Excel 파싱 로직
-- [ ] `lib/excel/parseExcel.ts` — SheetJS로 시트 자동 감지 (raw / 브릭마스터)
-- [ ] `lib/excel/wideToLong.ts` — `Jan 2024`~`Dec 2025` 컬럼 → `year_month` 행 변환
-- [ ] `lib/excel/parseIngredient.ts` — `Pack Molecule String` 파싱 (Gx 여부 판별)
-- [ ] 자사 제품(`제품` 컬럼) vs 경쟁사 분류 로직
-- [ ] `ddd_qty = 0` 행 필터링
+- [x] `lib/excel/parseExcel.ts` — SheetJS로 시트 자동 감지 (raw / 브릭마스터)
+- [x] `lib/excel/wideToLong.ts` — `Jan 2024`~`Dec 2025` 컬럼 → `year_month` 행 변환
+- [x] `lib/excel/parseIngredient.ts` — `Pack Molecule String` 파싱 (Gx 여부 판별)
+- [x] 자사 제품(`제품` 컬럼) vs 경쟁사 분류 로직
+- [x] `ddd_qty = 0` 행 필터링
 
 ### 4-3. DB 저장 (Server Action)
-- [ ] `app/(dashboard)/upload/actions.ts` — `processUpload` Server Action
-- [ ] `uploads` 테이블 레코드 생성 (`status: 'processing'`)
-- [ ] Supabase Storage에 원본 파일 저장 (`excel-uploads` 버킷)
-- [ ] `brick_master` upsert (청크 단위, 500행씩)
-- [ ] `monthly_ddd` upsert (청크 단위, 1,000행씩)
-- [ ] 완료 후 `status: 'done'`, `row_count` 업데이트
-- [ ] 오류 시 `status: 'error'`, `error_message` 저장
+- [x] `app/(dashboard)/upload/actions.ts` — `processUpload` Server Action
+- [x] `uploads` 테이블 레코드 생성 (`status: 'processing'`)
+- [x] Supabase Storage에 원본 파일 저장 (`excel-uploads` 버킷)
+- [x] `brick_master` upsert (청크 단위, 500행씩)
+- [x] `monthly_ddd` upsert (청크 단위, 1,000행씩)
+- [x] 완료 후 `status: 'done'`, `row_count` 업데이트
+- [x] 오류 시 `status: 'error'`, `error_message` 저장
 
 ### 4-4. 진행상태 UI
-- [ ] Supabase Realtime으로 `uploads` 테이블 변화 구독
-- [ ] 진행률 Progress Bar 표시
-- [ ] 업로드 이력 목록 (파일명 / 일시 / 행 수 / 상태 배지)
+- [x] Supabase Realtime으로 `uploads` 테이블 변화 구독
+- [x] 진행률 Progress Bar 표시
+- [x] 업로드 이력 목록 (파일명 / 일시 / 행 수 / 상태 배지)
 
 ---
 
@@ -182,7 +182,7 @@
 | Phase 1. Supabase 스키마 | 11 | 11 | 100% ✅ |
 | Phase 2. Next.js 초기 설정 | 13 | 13 | 100% ✅ |
 | Phase 3. 인증 시스템 | 8 | 7 | 87% |
-| Phase 4. Excel 업로드 | 15 | 0 | 0% |
+| Phase 4. Excel 업로드 | 15 | 15 | 100% ✅ |
 | Phase 5. 전체 현황 대시보드 | 7 | 0 | 0% |
 | Phase 6. 사업부 대시보드 | 9 | 0 | 0% |
 | Phase 7. 병원 대시보드 | 9 | 0 | 0% |
