@@ -7,26 +7,26 @@
 ## Phase 1. Supabase 스키마 설계 및 적용
 
 ### 1-1. 테이블 생성
-- [ ] `profiles` 테이블 생성 (auth.users 연동)
-- [ ] `brick_master` 테이블 생성
-- [ ] `uploads` 테이블 생성
-- [ ] `monthly_ddd` 테이블 생성 (복합 UNIQUE 키 포함)
+- [x] `profiles` 테이블 생성 (auth.users 연동)
+- [x] `brick_master` 테이블 생성
+- [x] `uploads` 테이블 생성
+- [x] `monthly_ddd` 테이블 생성 (복합 UNIQUE 키 포함)
 
 ### 1-2. 인덱스 및 뷰
-- [ ] `monthly_ddd` 마켓쉐어 쿼리 인덱스 생성 (`ingredient_market, year_month, brick_code`)
-- [ ] `brick_master` 사업부 인덱스 생성
-- [ ] `v_division_market_share` 뷰 생성
-- [ ] `v_hospital_market_share` 뷰 생성
+- [x] `monthly_ddd` 마켓쉐어 쿼리 인덱스 생성 (`ingredient_market, year_month, brick_code`)
+- [x] `brick_master` 사업부 인덱스 생성
+- [x] `v_division_market_share` 뷰 생성
+- [x] `v_hospital_market_share` 뷰 생성
 
 ### 1-3. RLS 정책
-- [ ] `profiles` RLS 설정 (본인만 수정, admin은 전체 조회)
-- [ ] `monthly_ddd` RLS 설정 (읽기: 인증 사용자, 쓰기: admin)
-- [ ] `brick_master` RLS 설정
-- [ ] `uploads` RLS 설정
+- [x] `profiles` RLS 설정 (본인만 수정, admin은 전체 조회)
+- [x] `monthly_ddd` RLS 설정 (읽기: 인증 사용자, 쓰기: admin)
+- [x] `brick_master` RLS 설정
+- [x] `uploads` RLS 설정
 
 ### 1-4. 타입 및 검증
-- [ ] TypeScript 타입 생성 (`mcp__supabase__generate_typescript_types`)
-- [ ] Supabase Performance Advisor 확인 (`mcp__supabase__get_advisors`)
+- [x] TypeScript 타입 생성 (`mcp__supabase__generate_typescript_types`)
+- [x] Supabase Performance Advisor 확인 (`mcp__supabase__get_advisors`)
 
 ---
 
@@ -179,7 +179,7 @@
 
 | 페이즈 | 항목 수 | 완료 | 진행률 |
 |--------|---------|------|--------|
-| Phase 1. Supabase 스키마 | 11 | 0 | 0% |
+| Phase 1. Supabase 스키마 | 11 | 11 | 100% ✅ |
 | Phase 2. Next.js 초기 설정 | 13 | 0 | 0% |
 | Phase 3. 인증 시스템 | 8 | 0 | 0% |
 | Phase 4. Excel 업로드 | 15 | 0 | 0% |
@@ -187,4 +187,4 @@
 | Phase 6. 사업부 대시보드 | 9 | 0 | 0% |
 | Phase 7. 병원 대시보드 | 9 | 0 | 0% |
 | Phase 8. 고도화 및 마무리 | 10 | 0 | 0% |
-| **합계** | **82** | **0** | **0%** |
+| **합계** | **82** | **11** | **13%** |
