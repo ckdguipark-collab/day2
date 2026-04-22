@@ -33,25 +33,25 @@
 ## Phase 2. Next.js 프로젝트 초기 설정
 
 ### 2-1. 프로젝트 생성
-- [ ] `npx create-next-app@latest` 실행 (App Router, TypeScript, Tailwind)
-- [ ] 디렉토리 구조 생성 (`app/`, `components/`, `lib/`, `types/`)
+- [x] `npx create-next-app@latest` 실행 (App Router, TypeScript, Tailwind)
+- [x] 디렉토리 구조 생성 (`app/`, `components/`, `lib/`, `types/`)
 
 ### 2-2. 패키지 설치
-- [ ] `@supabase/supabase-js` + `@supabase/ssr` 설치
-- [ ] `recharts` 설치
-- [ ] `xlsx` (SheetJS) 설치
-- [ ] `papaparse` + `@types/papaparse` 설치
+- [x] `@supabase/supabase-js` + `@supabase/ssr` 설치
+- [x] `recharts` 설치
+- [x] `xlsx` (SheetJS) 설치
+- [x] `papaparse` + `@types/papaparse` 설치
 
 ### 2-3. Supabase 클라이언트 설정
-- [ ] `.env.local` 환경변수 설정 (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`)
-- [ ] `lib/supabase/client.ts` 생성 (브라우저용 클라이언트)
-- [ ] `lib/supabase/server.ts` 생성 (Server Component용 클라이언트)
-- [ ] `lib/supabase/middleware.ts` 생성 (미들웨어용 클라이언트)
+- [x] `.env.local` 환경변수 설정 (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`)
+- [x] `lib/supabase/client.ts` 생성 (브라우저용 클라이언트)
+- [x] `lib/supabase/server.ts` 생성 (Server Component용 클라이언트)
+- [x] `lib/supabase/middleware.ts` 생성 (미들웨어용 클라이언트)
 
 ### 2-4. 공통 레이아웃
-- [ ] `app/layout.tsx` 루트 레이아웃 (폰트, 메타데이터)
-- [ ] `components/gnb/GNB.tsx` 상단 내비게이션 바
-- [ ] `app/(dashboard)/layout.tsx` 대시보드 공통 레이아웃
+- [x] `app/layout.tsx` 루트 레이아웃 (폰트, 메타데이터)
+- [x] `components/gnb/GNB.tsx` 상단 내비게이션 바
+- [x] `app/(dashboard)/layout.tsx` 대시보드 공통 레이아웃
 
 ---
 
@@ -180,11 +180,11 @@
 | 페이즈 | 항목 수 | 완료 | 진행률 |
 |--------|---------|------|--------|
 | Phase 1. Supabase 스키마 | 11 | 11 | 100% ✅ |
-| Phase 2. Next.js 초기 설정 | 13 | 0 | 0% |
+| Phase 2. Next.js 초기 설정 | 13 | 13 | 100% ✅ |
 | Phase 3. 인증 시스템 | 8 | 0 | 0% |
 | Phase 4. Excel 업로드 | 15 | 0 | 0% |
 | Phase 5. 전체 현황 대시보드 | 7 | 0 | 0% |
 | Phase 6. 사업부 대시보드 | 9 | 0 | 0% |
 | Phase 7. 병원 대시보드 | 9 | 0 | 0% |
 | Phase 8. 고도화 및 마무리 | 10 | 0 | 0% |
-| **합계** | **82** | **11** | **13%** |
+| **합계** | **82** | **24** | **29%** |
