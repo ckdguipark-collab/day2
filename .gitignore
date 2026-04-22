@@ -1,0 +1,28 @@
+# 환경변수 (절대 커밋 금지)
+.env
+.env.local
+.env.*.local
+
+# Next.js
+.next/
+out/
+build/
+
+# 의존성
+node_modules/
+
+# 대용량 바이너리 / 원본 데이터 파일
+*.xlsx
+*.xls
+*.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 에디터
+.vscode/
+*.swp
+
+# 로그
+npm-debug.log*

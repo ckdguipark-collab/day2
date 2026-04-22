@@ -1,0 +1,58 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(update-config)",
+      "Bash(powershell.exe -NonInteractive -Command 'Add-Type -AssemblyName System.Speech; $tts = New-Object System.Speech.Synthesis.SpeechSynthesizer; $voices = $tts.GetInstalledVoices\\(\\) | Where-Object { $_.VoiceInfo.Culture.Name -like '\\\\''ko*'\\\\'' }; if \\($voices\\) { $tts.SelectVoice\\($voices[0].VoiceInfo.Name\\) }; $tts.Speak\\('\\\\''작업이 끝났습니다'\\\\''\\)')",
+      "Bash(echo \"Exit: $?\")",
+      "Bash(claude mcp *)",
+      "Bash(npx skills *)",
+      "Bash(python -c ' *)",
+      "Bash(where python *)",
+      "Bash(where python3 *)",
+      "Bash(where py *)",
+      "PowerShell(Get-Command *)",
+      "PowerShell(& \"C:\\\\Users\\\\student\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe\" -c \"print\\('hello'\\)\")",
+      "PowerShell(node --version)",
+      "Bash(node -e ' *)",
+      "Bash(npm install *)",
+      "Bash(npm root *)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__supabase__execute_sql",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -c \"import sys,json;d=json.load(sys.stdin);q=d.get('tool_input',{}).get('query','').upper();found=[w for w in ['DROP TABLE','TRUNCATE TABLE','DELETE FROM monthly_ddd','DELETE FROM brick_master','DELETE FROM uploads'] if w in q];print('⛔ 위험한 SQL 감지: '+', '.join(found)) if found else None;sys.exit(2) if found else None\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mcp__supabase__apply_migration",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '📋 마이그레이션 완료 — mcp__supabase__generate_typescript_types 도구로 TypeScript 타입을 재생성하세요'"
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -f tsconfig.json ] && [ -d node_modules ] && npx tsc --noEmit 2>&1 | head -20 || true"
+          }
+        ]
+      }
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "supabase"
+  ]
+}
